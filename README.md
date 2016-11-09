@@ -29,7 +29,7 @@ Binary search runs in at worst logarithmic time, making O(log n) comparisons, wh
 
 `bit trie` algorithm should be more effective but I have not implemented it.
 
-I found other implementations so you prefer those implementation with redix tree:
+I found other implementations so you prefer those implementation with radix tree:
 - [go-net-radix](https://github.com/thekvs/go-net-radix)
 - [nradix](https://github.com/asergeyev/nradix)
 - [Longest Prefix Match algorithm in Go part 1](https://fredhsu.wordpress.com/2014/06/09/longest-prefix-match-algorithm-in-go-part-1/)
