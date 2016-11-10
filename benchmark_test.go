@@ -73,9 +73,12 @@ func BenchmarkIPv4Contains(b *testing.B) {
 	}
 
 	b.StartTimer()
-	for _, tt := range tests {
-		if got := IPv4Contains(tt.args.ipRanges, tt.args.ip); got != tt.want {
-			b.Errorf("%q. Contains() = %v, want %v", tt.name, got, tt.want)
+
+	for n := 0; n < b.N; n++ {
+		for _, tt := range tests {
+			if got := IPv4Contains(tt.args.ipRanges, tt.args.ip); got != tt.want {
+				b.Errorf("%q. Contains() = %v, want %v", tt.name, got, tt.want)
+			}
 		}
 	}
 }
@@ -146,9 +149,11 @@ func BenchmarkIPv6Contains(b *testing.B) {
 	}
 
 	b.StartTimer()
-	for _, tt := range tests {
-		if got := IPv6Contains(tt.args.ipRanges, tt.args.ip); got != tt.want {
-			b.Errorf("%q. Contains() = %v, want %v", tt.name, got, tt.want)
+	for n := 0; n < b.N; n++ {
+		for _, tt := range tests {
+			if got := IPv6Contains(tt.args.ipRanges, tt.args.ip); got != tt.want {
+				b.Errorf("%q. Contains() = %v, want %v", tt.name, got, tt.want)
+			}
 		}
 	}
 }
