@@ -29,7 +29,23 @@ Binary search runs in at worst logarithmic time, making O(log n) comparisons, wh
 
 `bit trie` algorithm should be more effective but I have not implemented it.
 
-I found other implementations so you prefer those implementation with radix tree:
+I found other implementations ~~so you prefer those implementation with radix tree~~:
 - [go-net-radix](https://github.com/thekvs/go-net-radix)
 - [nradix](https://github.com/asergeyev/nradix)
 - [Longest Prefix Match algorithm in Go part 1](https://fredhsu.wordpress.com/2014/06/09/longest-prefix-match-algorithm-in-go-part-1/)
+
+
+The below is benchmark of [iprange](https://github.com/smallnest/iprange), [go-net-radix](https://github.com/thekvs/go-net-radix), [nradix](https://github.com/asergeyev/nradix):
+
+[nradix](https://github.com/asergeyev/nradix) and [iprange](https://github.com/smallnest/iprange) are much better than [go-net-radix](https://github.com/thekvs/go-net-radix).
+
+
+```
+BenchmarkIPv4Contains-8          	  500000	      3387 ns/op	       0 B/op	       0 allocs/op
+BenchmarkIPv4Contains_Radix-8    	    5000	    223566 ns/op	     696 B/op	      70 allocs/op
+BenchmarkIPv4Contains_NRadix-8   	  500000	      3439 ns/op	     192 B/op	      34 allocs/op
+
+BenchmarkIPv6Contains-8          	  300000	      5835 ns/op	     720 B/op	      18 allocs/op
+BenchmarkIPv6Contains_Radix-8    	    5000	    224394 ns/op	     728 B/op	      45 allocs/op
+BenchmarkIPv6Contains_NRadix-8   	  300000	      4315 ns/op	     800 B/op	      33 allocs/op
+```
