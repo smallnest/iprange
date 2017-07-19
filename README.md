@@ -33,7 +33,7 @@ I found other implementations ~~so you prefer those implementation with radix tr
 - [go-net-radix](https://github.com/thekvs/go-net-radix)
 - [nradix](https://github.com/asergeyev/nradix)
 - [Longest Prefix Match algorithm in Go part 1](https://fredhsu.wordpress.com/2014/06/09/longest-prefix-match-algorithm-in-go-part-1/)
-
+- [iptree](https://github.com/zmap/go-iptree)
 
 The below is benchmark of [iprange](https://github.com/smallnest/iprange), [go-net-radix](https://github.com/thekvs/go-net-radix), [nradix](https://github.com/asergeyev/nradix):
 
